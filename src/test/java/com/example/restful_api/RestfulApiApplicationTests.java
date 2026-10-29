@@ -230,7 +230,7 @@ class RestfulApiApplicationTests {
         ResponseEntity<Void> deleteResponse = restTemplate
                 .withBasicAuth("kelvin", "abc123")
                 .exchange("/cashcard/102", HttpMethod.DELETE, null, Void.class);
-        assertThat(deleteResponse.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+        assertThat(deleteResponse.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
 
         ResponseEntity<String> getResponse = restTemplate
                 .withBasicAuth("gumar", "xyz789")
